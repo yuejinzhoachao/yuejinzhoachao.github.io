@@ -17,6 +17,15 @@ minify:
   disableXML: true
   minifyOutput: true
 
+outputs:
+  home: ["HTML", "RSS", "JSON"]
+  # section: ["HTML", "RSS", "JSON"]
+  # taxonomy: ["HTML", "RSS", "JSON"]
+  # term: ["HTML", "RSS", "JSON"]
+  # taxonomyTerm: ["HTML", "RSS", "JSON"]
+  # page: ["HTML", "RSS", "JSON"]
+  # _default: ["HTML", "RSS", "JSON"]
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: My website
@@ -118,7 +127,7 @@ params:
     location: 0
     distance: 1000
     threshold: 0.4
-    minMatchCharLength: 0
+    minMatchCharLength: 1
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
