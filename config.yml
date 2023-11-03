@@ -1,8 +1,10 @@
 baseURL: "https://yuejinzhoachao.github.io/"
 title: "My website"
-paginate: 5
+paginate: 7 # 一页显示多少篇文章
 theme: PaperMod
 
+defaultContentLanguage: "zh"
+hasCJKLanguage: true
 enableRobotsTXT: true
 buildDrafts: true # 是否渲染草稿
 buildFuture: false # 是否渲染未发布的文章
@@ -15,6 +17,15 @@ minify:
   disableXML: true
   minifyOutput: true
 
+outputs:
+  home: ["HTML", "RSS", "JSON"]
+  # section: ["HTML", "RSS", "JSON"]
+  # taxonomy: ["HTML", "RSS", "JSON"]
+  # term: ["HTML", "RSS", "JSON"]
+  # taxonomyTerm: ["HTML", "RSS", "JSON"]
+  # page: ["HTML", "RSS", "JSON"]
+  # _default: ["HTML", "RSS", "JSON"]
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: My website
@@ -23,7 +34,7 @@ params:
   author: yuejinzhoachao
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
-  DateFormat: "2006-10-02"
+  DateFormat: "2006-01-02"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
 
@@ -45,7 +56,7 @@ params:
 
   assets:
     # disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
+    disableFingerprinting: true
     favicon: "<link / abs url>"
     favicon16x16: "<link / abs url>"
     favicon32x32: "<link / abs url>"
@@ -67,10 +78,8 @@ params:
     imageHeight: 120
     imageTitle: my image
     buttons:
-      - name: Posts
+      - name: 博客
         url: /posts/
-      - name: Tags
-        url: /tags/
       - name: 技术
         url: /tech/
         weight: 30
@@ -118,25 +127,24 @@ params:
     location: 0
     distance: 1000
     threshold: 0.4
-    minMatchCharLength: 0
+    minMatchCharLength: 1
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
     - identifier: categories
-      name: categories
+      name: 分类
       url: /categories/
       weight: 10
     - identifier: tags
-      name: tags
+      name: 标签
       url: /tags/
       weight: 20
     - identifier: search
-      name: search
+      name: 搜索
       url: /search/
       weight: 30
-    - identifier: example
-      name: example.org
-      url: https://example.org
+    - name: 归档
+      url: /archives/
       weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
